@@ -1,5 +1,4 @@
-from .base_spell import BaseSpell
-from ..priest import BasePriest
+from .base_spell import BaseSpell, BasePriest
 
 
 class Heal(BasePriest):

@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
+from .meta_class import ClassMeta
 
 
-class BaseClass(ABC):
+class BaseClass(ABC, metaclass=ClassMeta):
+    required_attributes = ['int', 'spirit', 'mp5', 'talent_points_spent', 'talent_points_max']
 
     @abstractmethod
-    def _get_spells(self) -> list:
-        pass
+    def __init__(self):
+        self.talent_points_max = 52
