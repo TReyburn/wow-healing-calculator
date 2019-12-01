@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class BaseHeal(ABC):
 
     def __init__(self):
