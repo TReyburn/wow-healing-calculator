@@ -3,7 +3,7 @@ from .base_spell import BaseSpell, BasePriestSpells
 
 class Heal(BasePriestSpells):
     """
-    Provides an interface to all the ranks of Heal spell
+    Provides an interface to all the ranks of the Heal spell
     """
     def __init__(self):
         self.rank1 = HealRank1()
