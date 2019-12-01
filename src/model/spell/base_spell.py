@@ -1,18 +1,23 @@
-from abc import ABC, abstractmethod
+from abc import ABC, ABCMeta, abstractmethod
 
 
-class BaseHeal(ABC):
+class SpellMeta(ABCMeta):
+    required_attributes = []
 
-    def __init__(self):
-        self.cost = 1
-        self.cost_coef = 1.0
-        self.cast = 1.0
-        self.cast_coef = 1.0
-        self.heal_low = 1
-        self.heal_high = 1
-        self.power_coef = 1.0
-        self.spell_coef = 1.0
+    def __call__(cls):
+        obj = super(SpellMeta, cls).__call__()
+        for attribute_name in obj.required_attributes:
+            if not getattr(obj, attribute_name):
+                raise ValueError(f'Required attribute ({attribute_name}) not set')
+        return obj
 
-    # @abstractmethod
-    # def set_spell_coef(self, coef):
-    #     self.spell_coef += coef
+
+class BaseHeal(ABC, metaclass=SpellMeta):
+    required_attributes = ['cost', 'cost_coef', 'cast', 'cast_coef', 'heal_low',
+                           'heal_high', 'power_coef', 'spell_coef']
+
+    def __repr__(self) -> dict:
+        my_dict = {}
+        for attribute in self.required_attributes:
+            my_dict[f'{attribute}'] = self.__getattribute__(attribute)
+        return str(my_dict)
