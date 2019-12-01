@@ -7,6 +7,10 @@ class BaseSpell(ABC, metaclass=SpellMeta):
                            'heal_high', 'power_coef', 'spell_coef', 'name']
 
     def __repr__(self) -> str:
+        """
+        A method for printing all attributes of a spell rank
+        :return:
+        """
         my_dict = {}
         for attribute in self.required_attributes:
             my_dict[f'{attribute}'] = self.__getattribute__(attribute)
