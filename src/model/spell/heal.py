@@ -5,7 +5,12 @@ from ..priest import BasePriest
 class Heal(BasePriest):
     def __init__(self):
         self.rank1 = HealRank1()
+        self.rank2 = HealRank2()
+        self.rank3 = HealRank3()
         self.rank4 = HealRank4()
+
+    def _get_spells(self) -> list:
+        return [self.rank1, self.rank2, self.rank3, self.rank4]
 
 
 class HealRank1(BaseHeal):
