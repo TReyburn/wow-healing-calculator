@@ -1,7 +1,7 @@
-from .base_spell import BaseSpell, BasePriest
+from .base_spell import BaseSpell, BasePriestSpells
 
 
-class Heal(BasePriest):
+class Heal(BasePriestSpells):
     """
     Provides an interface to all the ranks of Heal spell
     """

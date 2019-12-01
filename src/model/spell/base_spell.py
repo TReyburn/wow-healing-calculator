@@ -13,7 +13,10 @@ class BaseSpell(ABC, metaclass=SpellMeta):
         return str(my_dict)
 
 
-class BasePriest(ABC):
+class BasePriestSpells(ABC):
+    """
+    Creates a standard interface for all Priest spells
+    """
 
     @abstractmethod
     def _get_spells(self) -> list:
