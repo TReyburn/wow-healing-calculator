@@ -3,7 +3,7 @@ from .meta_class import ClassMeta
 
 
 class BaseClass(ABC, metaclass=ClassMeta):
-    required_attributes = ['int', 'spirit', 'mp5', 'talent_points_spent', 'talent_points_max']
+    required_attributes = ['int', 'spirit', 'mp5', 'talent_points_spent', 'talent_points_max', 'spells', 'level']
 
     @abstractmethod
     def __init__(self):
