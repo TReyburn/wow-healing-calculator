@@ -12,7 +12,7 @@ class SpellMeta(ABCMeta):
         return obj
 
 
-class BaseHeal(ABC, metaclass=SpellMeta):
+class BaseSpell(ABC, metaclass=SpellMeta):
     required_attributes = ['cost', 'cost_coef', 'cast', 'cast_coef', 'heal_low',
                            'heal_high', 'power_coef', 'spell_coef']
 

@@ -1,4 +1,4 @@
-from .base_spell import BaseHeal
+from .base_spell import BaseSpell
 from ..priest import BasePriest
 
 
@@ -7,10 +7,10 @@ class Heal(BasePriest):
     Provides an interface to all the ranks of Heal spell
     """
     def __init__(self):
-        self.rank1 = HealRank1()
-        self.rank2 = HealRank2()
-        self.rank3 = HealRank3()
-        self.rank4 = HealRank4()
+        self.rank1 = SpellRank1()
+        self.rank2 = SpellRank2()
+        self.rank3 = SpellRank3()
+        self.rank4 = SpellRank4()
 
     def _get_spells(self) -> list:
         """
@@ -19,7 +19,7 @@ class Heal(BasePriest):
         return [self.rank1, self.rank2, self.rank3, self.rank4]
 
 
-class HealRank1(BaseHeal):
+class SpellRank1(BaseSpell):
     """
     Data model for Heal Rank 1
     """
@@ -34,7 +34,7 @@ class HealRank1(BaseHeal):
         self.spell_coef = 1.0
 
 
-class HealRank2(BaseHeal):
+class SpellRank2(BaseSpell):
     """
     Data model for Heal Rank 2
     """
@@ -49,7 +49,7 @@ class HealRank2(BaseHeal):
         self.spell_coef = 1.0
 
 
-class HealRank3(BaseHeal):
+class SpellRank3(BaseSpell):
     """
     Data model for Heal Rank 3
     """
@@ -64,7 +64,7 @@ class HealRank3(BaseHeal):
         self.spell_coef = 1.0
 
 
-class HealRank4(BaseHeal):
+class SpellRank4(BaseSpell):
     """
     Data model for Heal Rank 4
     """
