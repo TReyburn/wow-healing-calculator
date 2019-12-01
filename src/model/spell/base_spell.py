@@ -16,7 +16,7 @@ class BaseHeal(ABC, metaclass=SpellMeta):
     required_attributes = ['cost', 'cost_coef', 'cast', 'cast_coef', 'heal_low',
                            'heal_high', 'power_coef', 'spell_coef']
 
-    def __repr__(self) -> dict:
+    def __repr__(self) -> str:
         my_dict = {}
         for attribute in self.required_attributes:
             my_dict[f'{attribute}'] = self.__getattribute__(attribute)

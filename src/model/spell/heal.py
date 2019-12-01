@@ -3,6 +3,9 @@ from ..priest import BasePriest
 
 
 class Heal(BasePriest):
+    """
+    Provides an interface to all the ranks of Heal spell
+    """
     def __init__(self):
         self.rank1 = HealRank1()
         self.rank2 = HealRank2()
@@ -10,6 +13,9 @@ class Heal(BasePriest):
         self.rank4 = HealRank4()
 
     def _get_spells(self) -> list:
+        """
+        Internal method which returns an iterable list of spell rank objects
+        """
         return [self.rank1, self.rank2, self.rank3, self.rank4]
 
 
