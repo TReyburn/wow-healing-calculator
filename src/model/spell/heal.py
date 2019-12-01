@@ -7,10 +7,10 @@ class Heal(BasePriest):
     Provides an interface to all the ranks of Heal spell
     """
     def __init__(self):
-        self.rank1 = SpellRank1()
-        self.rank2 = SpellRank2()
-        self.rank3 = SpellRank3()
-        self.rank4 = SpellRank4()
+        self.rank1 = HealRank1()
+        self.rank2 = HealRank2()
+        self.rank3 = HealRank3()
+        self.rank4 = HealRank4()
 
     def _get_spells(self) -> list:
         """
@@ -19,7 +19,7 @@ class Heal(BasePriest):
         return [self.rank1, self.rank2, self.rank3, self.rank4]
 
 
-class SpellRank1(BaseSpell):
+class HealRank1(BaseSpell):
     """
     Data model for Heal Rank 1
     """
@@ -32,9 +32,10 @@ class SpellRank1(BaseSpell):
         self.heal_high = 353
         self.power_coef = 0.729
         self.spell_coef = 1.0
+        self.name = 'Heal (Rank 1)'
 
 
-class SpellRank2(BaseSpell):
+class HealRank2(BaseSpell):
     """
     Data model for Heal Rank 2
     """
@@ -47,9 +48,10 @@ class SpellRank2(BaseSpell):
         self.heal_high = 507
         self.power_coef = 0.857
         self.spell_coef = 1.0
+        self.name = 'Heal (Rank 2)'
 
 
-class SpellRank3(BaseSpell):
+class HealRank3(BaseSpell):
     """
     Data model for Heal Rank 3
     """
@@ -62,9 +64,10 @@ class SpellRank3(BaseSpell):
         self.heal_high = 662
         self.power_coef = 0.857
         self.spell_coef = 1.0
+        self.name = 'Heal (Rank 3)'
 
 
-class SpellRank4(BaseSpell):
+class HealRank4(BaseSpell):
     """
     Data model for Heal Rank 4
     """
@@ -77,3 +80,4 @@ class SpellRank4(BaseSpell):
         self.heal_high = 827
         self.power_coef = 0.857
         self.spell_coef = 1.0
+        self.name = 'Heal (Rank 4)'
