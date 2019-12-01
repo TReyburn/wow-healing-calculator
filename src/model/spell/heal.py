@@ -20,7 +20,9 @@ class Heal(BasePriest):
 
 
 class HealRank1(BaseHeal):
-
+    """
+    Data model for Heal Rank 1
+    """
     def __init__(self):
         self.cost = 155
         self.cost_coef = 1.0
@@ -33,7 +35,9 @@ class HealRank1(BaseHeal):
 
 
 class HealRank2(BaseHeal):
-
+    """
+    Data model for Heal Rank 2
+    """
     def __init__(self):
         self.cost = 205
         self.cost_coef = 1.0
@@ -46,7 +50,9 @@ class HealRank2(BaseHeal):
 
 
 class HealRank3(BaseHeal):
-
+    """
+    Data model for Heal Rank 3
+    """
     def __init__(self):
         self.cost = 255
         self.cost_coef = 1.0
@@ -59,7 +65,9 @@ class HealRank3(BaseHeal):
 
 
 class HealRank4(BaseHeal):
-
+    """
+    Data model for Heal Rank 4
+    """
     def __init__(self):
         self.cost = 305
         self.cost_coef = 1.0
