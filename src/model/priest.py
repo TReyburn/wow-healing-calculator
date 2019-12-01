@@ -1,6 +1,6 @@
 from abc import abstractmethod
 from .base_class import BaseClass
-import model.spell
+import model.spells
 
 
 class Priest(BaseClass):
@@ -12,8 +12,8 @@ class Priest(BaseClass):
         self.mp5 = 1
         self.talent_points_spent = 1
 
-        # Iterate over all of the Priest Spells in model.spell package
-        for spell in model.spell.priest_spells.values():
+        # Iterate over all of the Priest Spells in model.spells package
+        for spell in model.spells.priest_spells.values():
             name = spell.__name__
             self.__setattr__(name, spell())
 
