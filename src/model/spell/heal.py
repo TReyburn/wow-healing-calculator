@@ -1,4 +1,4 @@
-from .base import BaseHeal
+from .base_spell import BaseHeal
 from ..priest import BasePriest
 
 
