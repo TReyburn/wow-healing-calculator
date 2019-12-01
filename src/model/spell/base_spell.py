@@ -1,15 +1,5 @@
-from abc import ABC, ABCMeta, abstractmethod
-
-
-class SpellMeta(ABCMeta):
-    required_attributes = []
-
-    def __call__(cls):
-        obj = super(SpellMeta, cls).__call__()
-        for attribute_name in obj.required_attributes:
-            if not getattr(obj, attribute_name):
-                raise ValueError(f'Required attribute ({attribute_name}) not set')
-        return obj
+from abc import ABC, abstractmethod
+from .meta_spell import SpellMeta
 
 
 class BaseSpell(ABC, metaclass=SpellMeta):
